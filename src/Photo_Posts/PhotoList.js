@@ -1,6 +1,6 @@
 import React from "react";
-import PhotosData from "../src/Photo_Posts/PhotosData";
-import classes from "./Photo_Posts/photo.module.css";
+import PhotosData from "./PhotosData";
+import classes from "../Styles/Photo Styles/photo.module.css";
 import { Grid } from "@material-ui/core";
 
 function PhotoList(props) {

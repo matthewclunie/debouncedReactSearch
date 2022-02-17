@@ -27,7 +27,7 @@ function PhotosData(props) {
 
   const handleClickOpen = () => {
     setOpen(true);
-    console.log("😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂");
+    console.log("Check 1, 2");
     setCount(count + 1);
   };
 
@@ -37,14 +37,14 @@ function PhotosData(props) {
 
   const ChillestFunctionBody = () => {
     if (count % 2 === 0) {
-      return "Bruhh 😂😂😂😂";
-    } else return "YOO CHILL lmao 🤣🤣🤣🤣";
+      return "lol";
+    } else return "haha";
   };
 
   const ChillestFunctionTitle = () => {
     if (count % 2 === 0) {
-      return "Lmao I'm dead 💀💀";
-    } else return "Rofl 🙏💰💯";
+      return "heyy";
+    } else return "lol";
   };
 
   return (

@@ -1,9 +1,11 @@
 searchInputs {
   display: flex;
-  color: white;
+  color: #92cbd1;
+  text-align: center;
 }
 
-.search input {
+.search {
+  display: grid;
   background-color: #92cbd1;
   color: black;
   text-align: center;
@@ -12,33 +14,42 @@ searchInputs {
   font-size: 18px;
   height: 30px;
   width: 300px;
+  margin-bottom: 200px;
 }
 
 .searchIcon {
-  height: 60px;
+  display: inline;
+  height: 50px;
   width: 50px;
-  background-color: #92cbd1;
   display: grid;
   place-items: center;
   color: white;
+  border-radius: 50px;
+  text-align: center;
 }
 
-/* .dataResult::-webkit-scrollbar {
+.searchAuto {
   background-color: #92cbd1;
-  color: black;
+  margin: 40px;
   border-radius: 25px;
-  display: none;
-} */
+  width: 800px;
+  border: none;
+}
 
 .dataResult {
+  text-align: center;
   margin-top: 5px;
   width: 300px;
   height: 200px;
   background-color: #92cbd1;
   color: black;
-  /* border-radius: 10px; */
+  border-radius: 10px;
   overflow: hidden;
   overflow-y: auto;
+}
+
+.dataResult::-webkit-scrollbar {
+  display: none;
 }
 
 .dataResult .dataItem {
@@ -53,10 +64,6 @@ searchInputs {
 
 #clearBtn {
   cursor: pointer;
-}
-
-.dataItem p {
-  margin-left: 10px;
 }
 
 a {

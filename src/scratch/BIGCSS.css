@@ -1,0 +1,79 @@
+.autoComplete {
+  background-color: "#92cbd1";
+  border-radius: "25px";
+  width: "800px";
+  margin-top: "30px";
+  text-align: "center";
+  font-size: "22px";
+}
+
+.textField {
+  text-align: "center";
+  font-size: "22px";
+}
+
+/* -------------------------- */
+
+/* .textField {
+background-color: "#92cbd1";
+border-radius: "25px";
+width: "800px";
+margin-top: "30px";
+"& input": {
+  textAlign: "center";
+  fontSize: "22px";
+  ;
+} 
+} */
+
+/*--------------------------*/
+
+/* const StyledStack = styled(Stack)`
+margin: "20px";
+justifyContent: "center";
+width: "400px";
+`;
+
+const StyledButton = styled(Button)`
+margin: "10px";
+width: "400px";
+justifyContent: "center";
+`; */
+
+/*------------------------*/
+
+/* const StyledAutocomplete = styled(Autocomplete)`
+  backgroundColor: "red",
+  borderRadius: "25px",
+  width: "800px",
+  marginTop: "30px",
+  textAlign: "center",
+  fontSize: "22px",
+  "& input": {
+    textAlign: "center",
+    fontSize: "22px",
+  `;
+
+  const StyledTextField = styled(TextField)`
+  backgroundColor: "red",
+  borderRadius: "25px",
+  width: "800px",
+  marginTop: "30px",
+  textAlign: "center",
+  fontSize: "22px",
+  "& input": {
+    textAlign: "center",
+    fontSize: "22px",
+  `;
+
+  const StyledStack = styled(Stack)`
+    margin: "20px";
+    justifyContent: "center";
+    width: "400px";
+  `;
+
+  const StyledButton = styled(Button)`
+    margin: "10px";
+    width: "400px";
+    justifyContent: "center";
+  `; */

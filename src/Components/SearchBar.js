@@ -1,62 +1,42 @@
 import * as React from "react";
-import { useState } from "react";
-import "./SearchBar.css";
-import SearchIcon from "@mui/icons-material/Search";
-import CancelIcon from "@mui/icons-material/Cancel";
-// import PhotosData from "../src/Photo_Posts/PhotosData";
-// import PhotoList from "../PhotoList";
 import photos from "../Photo_Posts/photos.json";
+import { Autocomplete } from "@mui/material";
+import StyledTextField from "../Styles/Component Styles/StyledTextField";
+import StyledStack from "../Styles/Component Styles/StyledStack";
+import StyledButton from "../Styles/Component Styles/StyledButton";
 
-function SearchBar({ placeholder /*photo*/ }) {
-  const [filteredData, setFilteredData] = useState([]);
-  const [wordEntered, setWordEntered] = useState([""]);
+function SearchBar(props) {
+  const { wordEntered, setWordEntered, setDebouncedWordEntered } = props;
 
-  const handleFilter = (e) => {
-    const searchWord = e.target.value;
-    setWordEntered(searchWord);
-    const newFilter = photos.filter((value) => {
-      return value.title.toLowerCase().includes(searchWord.toLowerCase());
-    });
-    if (searchWord === "") {
-      setFilteredData([]);
-    } else setFilteredData(newFilter);
-  };
-
-  const clearInput = () => {
-    setFilteredData([]);
+  const handleClear = (e) => {
     setWordEntered("");
   };
 
   return (
-    <div className="search">
-      <div className="searchInputs">
-        <input
-          type="text"
-          placeholder={placeholder}
-          value={wordEntered}
-          onChange={handleFilter}
-        />
-        <div className="searchIcon">
-          {filteredData.length === 0 ? (
-            <SearchIcon />
-          ) : (
-            <CancelIcon id="clearBtn" onClick={clearInput} />
-          )}
-        </div>
-      </div>
-      {filteredData.length !== 0 && (
-        <div className="dataResult">
-          {filteredData.map((photo /*key*/) => {
-            return (
-              <a className="dataItem" href={photo.url}>
-                <p>{photo.title}</p>
-              </a>
-            );
-          })}
-        </div>
-      )}
-    </div>
+    <form>
+      <Autocomplete
+        freeSolo
+        placeholder="Search the dang album..."
+        data={photos}
+        inputValue={wordEntered}
+        onInputChange={(_e, newInputValue) => {
+          setWordEntered(newInputValue);
+          setDebouncedWordEntered(newInputValue);
+        }}
+        options={photos.map((photo) => photo.title)}
+        renderInput={(params) => (
+          <StyledTextField {...params} label="search the dang album" />
+        )}
+      />
+      <StyledStack>
+        <StyledButton onClick={handleClear}>Clear</StyledButton>
+      </StyledStack>
+    </form>
   );
 }
 
 export default SearchBar;
+
+// Rob's practice notes
+// connect: text input in searchbar, going to affect the cards displayed in the grid.
+// we need to filter photos based on text input from search bar.
