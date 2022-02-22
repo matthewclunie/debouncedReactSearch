@@ -30,7 +30,6 @@ function debounce(fn, delay) {
 }
 
 function App() {
-  const [wordState, setWordState] = useState("");
   const [debouncedWordState, setDebouncedWordState] = useState("");
   const debouncedSetDebouncedWordState = useCallback(
     debounce(setDebouncedWordState, 1000),
@@ -39,11 +38,7 @@ function App() {
   return (
     <StyledPaper>
       <Header />
-      {/* <SearchBar
-        setDebouncedWordEntered={debouncedSetDebouncedWordState}
-        wordEntered={wordState}
-        setWordEntered={setWordState}
-      /> */}
+      <SearchBar setDebouncedWordEntered={debouncedSetDebouncedWordState} />
       <PhotoList details={filteredPhotos(debouncedWordState)} />
     </StyledPaper>
   );
